@@ -77,19 +77,22 @@ For User:
 - **DashBoard:** All user details.
 ![Main Page](image/driving_whole_dashboard.png)
 
+![Main Page](image/driving_dashbord_1.png)
+
+![Main Page](image/driving_dashbord_2.png)
+
 - **Exam:** Online exam that user will give to get a licence.
 ![Main Page](image/driving_dashboard_exam_1.png)
-![Main Page](image/driving_dashboard_exam_2.png)
 - **Print:** user can download the licence.
 
 ![Main Page](image/driving_dashboard_lincence.png)
 
 ![Main Page](image/driving_dashboard_lincence_pdf.png)
 - **User Details:** Provides details about the student's account, including their name, email, and other relevant information.
-![Main Page](image/driving_dashbord_1.png)
+
 - **User Edit Details:** Allows students to edit their account details.
 
-![Main Page](image/driving_dashbord_2.png)
+
 ![Main Page](image/driving_dashbord_edit_1.png)
 ![Main Page](image/driving_dashbord_edit_2.png)
 
@@ -101,6 +104,7 @@ To build the front-end, we use frameworks and libraries such as ReactJS, CSS, an
 
 The back-end of the platform is built using NodeJS and ExpressJS, providing APIs for the front-end to consume. These APIs include functionalities such as user authentication, licence creation, and get user details and more. The back-end also handles the logic for processing and storing the course content and user data.
 
+![Main Page](image/driving_dashboard_exam_2.png)
 #### Back-end Features
 
 - **User Authentication and Authorization:** User can sign up and log in to the platform using their email addresses and passwords. The platform also supports OTP (One-Time Password) verification  for added security.
