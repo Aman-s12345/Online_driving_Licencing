@@ -5,7 +5,7 @@ const { MONGODB_URL } = process.env;
 
 exports.connect = () => {
 	mongoose
-		.connect( "mongodb+srv://soulopscout:sfaman23@cluster0.druj2gv.mongodb.net/DrivingL", {
+		.connect( "mongodb+srv://soulopscout:sfaman23@cluster0.druj2gv.mongodb.net/?retryWrites=true&w=majority/DrivingL", {
 			
 		})
 		.then(console.log(`DB ka Connection Success`))
