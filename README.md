@@ -1,10 +1,15 @@
 
 # Online Driving Licencing
 :rocket: [Link to website][https://online-driving-licencing.vercel.app/]
-# for testing 
-You can use my id also.
-Email : amansinghbiuri@gmail.com
-Password : 1212
+
+ **For Testing : Go to the hosted Link:**
+   ```bash
+   You can make your Id , Please check email in spam for otp
+   You can use my Id as well for testing
+   Email : amansinghbiuri@gmail.com
+   Password : 1212
+
+
 
 # how to set up
 
@@ -42,32 +47,21 @@ Password : 1212
 
 
 
-![Main Page](images/mainpage.png)
-StudyNotion is a fully functional EdTech platform that enables users to create, consume, and rate educational content. The platform is built using the MERN stack, which includes ReactJS, NodeJS, MongoDB, and ExpressJS.
+![Main Page](image/driving_home.png)
+Online Driving Licencing is a fully functional  platform that enables users to create, consume, and rate educational content. The platform is built using the MERN stack, which includes ReactJS, NodeJS, MongoDB, and ExpressJS.
 
-## Table of Contents
 
-- [Introduction](#introduction)
-- [System Architecture](#system-architecture)
-  - [Front-end](#front-end)
-  - [Back-end](#back-end)
-  - [Database](#database)
-  - [Architecture Diagram](#architecture-diagram)
-- [API Design](#api-design)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
 
 
 ## Introduction
 
-StudyNotion aims to provide a seamless and interactive learning experience for students, making education more accessible and engaging. Additionally, the platform serves as a platform for instructors to showcase their expertise and connect with learners across the globe.
+Online Driving Licencing is designed to revolutionize the process of obtaining a driving license, offering a user-friendly and interactive learning experience. Our platform aims to make driver education more accessible, engaging, and efficient.
 
 In the following sections, we will cover the technical details of the platform, including the system architecture, API design, installation, usage instructions, and potential future enhancements.
 
 ## System Architecture
 
-The StudyNotion EdTech platform consists of three main components: the front-end, the back-end, and the database. The platform follows a client-server architecture, with the front-end serving as the client and the back-end and database serving as the server.
+Online Driving Licencing platform consists of three main components: the front-end, the back-end, and the database. The platform follows a client-server architecture, with the front-end serving as the client and the back-end and database serving as the server.
 
 ### Front-end
 
@@ -75,22 +69,29 @@ The front-end of the platform is built using ReactJS, which allows for the creat
 
 #### Front End Pages
 
-For Students:
+For User:
 
-- **Homepage:** A brief introduction to the platform with links to the course list and user details.
-- **Course List:** A list of all the courses available on the platform, along with their descriptions and ratings.
-- **Wishlist:** Displays all the courses that a student has added to their wishlist.
-- **Cart Checkout:** Allows the user to complete course purchases.
-- **Course Content:** Presents the course content for a particular course, including videos and related material.
+- **Homepage:** A brief introduction to the platform with links
+![Main Page](image/driving_home.png)
+
+- **DashBoard:** All user details.
+![Main Page](image/driving_whole_dashboard.png)
+
+- **Exam:** Online exam that user will give to get a licence.
+![Main Page](image/driving_dashboard_exam_1.png)
+![Main Page](image/driving_dashboard_exam_2.png)
+- **Print:** user can download the licence.
+
+![Main Page](image/driving_dashboard_lincence.png)
+
+![Main Page](image/driving_dashboard_lincence_pdf.png)
 - **User Details:** Provides details about the student's account, including their name, email, and other relevant information.
+![Main Page](image/driving_dashbord_1.png)
 - **User Edit Details:** Allows students to edit their account details.
 
-For Instructors:
-
-- **Dashboard:** Offers an overview of the instructor's courses, along with ratings and feedback for each course.
-- **Insights:** Provides detailed insights into the instructor's courses, including the number of views, clicks, and other relevant metrics.
-- **Course Management Pages:** Enables instructors to create, update, and delete courses, as well as manage course content and pricing.
-- **View and Edit Profile Details:** Allows instructors to view and edit their account details.
+![Main Page](image/driving_dashbord_2.png)
+![Main Page](image/driving_dashbord_edit_1.png)
+![Main Page](image/driving_dashbord_edit_2.png)
 
 #### Front-end Tools and Libraries
 
@@ -98,15 +99,13 @@ To build the front-end, we use frameworks and libraries such as ReactJS, CSS, an
 
 ### Back-end
 
-The back-end of the platform is built using NodeJS and ExpressJS, providing APIs for the front-end to consume. These APIs include functionalities such as user authentication, course creation, and course consumption. The back-end also handles the logic for processing and storing the course content and user data.
+The back-end of the platform is built using NodeJS and ExpressJS, providing APIs for the front-end to consume. These APIs include functionalities such as user authentication, licence creation, and get user details and more. The back-end also handles the logic for processing and storing the course content and user data.
 
 #### Back-end Features
 
-- **User Authentication and Authorization:** Students and instructors can sign up and log in to the platform using their email addresses and passwords. The platform also supports OTP (One-Time Password) verification and forgot password functionality for added security.
-- **Course Management:** Instructors can create, read, update, and delete courses, as well as manage course content and media. Students can view and rate courses.
-- **Payment Integration:** Students will purchase and enroll in courses by completing the checkout flow, followed by Razorpay integration for payment handling.
-- **Cloud-based Media Management:** StudyNotion uses Cloudinary, a cloud-based media management service, to store and manage all media content, including images, videos, and documents.
-- **Markdown Formatting:** Course content in document format is stored in Markdown format, allowing for easier display and rendering on the front-end.
+- **User Authentication and Authorization:** User can sign up and log in to the platform using their email addresses and passwords. The platform also supports OTP (One-Time Password) verification  for added security.
+- **Cloud-based Media Management:** Online Driving Licencing uses Cloudinary, a cloud-based media management service, to store and manage all media content, including images, videos, and documents.
+- **Markdown Formatting:**  content in document format is stored in Markdown format, allowing for easier display and rendering on the front-end.
 
 #### Back-end Frameworks, Libraries, and Tools
 
@@ -119,22 +118,10 @@ The back-end of StudyNotion uses various frameworks, libraries, and tools to ens
 - **Bcrypt:** Used for password hashing, adding an extra layer of security to user data.
 - **Mongoose:** Used as an Object Data Modeling (ODM) library, providing a way to interact with MongoDB using JavaScript.
 
-#### Data Models and Database Schema
-
-The back-end of StudyNotion uses several data models and database schemas to manage data, including:
-
-- **Student Schema:** Includes fields such as name, email, password, and course details for each student.
-- **Instructor Schema:** Includes fields such as name, email, password, and course details for each instructor.
-- **Course Schema:** Includes fields such as course name, description, instructor details, and media content.
+![Main Page](image/driving_dashboard_logout.png)
 
 ### Database
 
 The database for the platform is built using MongoDB, a NoSQL database that provides a flexible and scalable data storage solution. MongoDB allows for the storage of unstructured and semi-structured data. The database stores the course content, user data, and other relevant information related to the platform.
 
-![Database Schema](images/schema.png)
 
-### Architecture Diagram
-
-Below is a high-level diagram that illustrates the architecture of the StudyNotion EdTech platform:
-
-![Architecture](images/architecture.png)
