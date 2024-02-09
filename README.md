@@ -1,5 +1,5 @@
 
-# Online Driving Licencing
+# Online Driving Licensing
 :rocket: [Link to website][https://online-driving-licencing.vercel.app/]
 
  **For Testing : Go to the hosted Link:**
@@ -48,14 +48,14 @@
 
 
 ![Main Page](image/driving_home.png)
-Online Driving Licencing is a fully functional  platform that enables users to create, consume, and rate educational content. The platform is built using the MERN stack, which includes ReactJS, NodeJS, MongoDB, and ExpressJS.
+Online Driving Licensing is a fully functional  platform that enables users to create, consume, and rate educational content. The platform is built using the MERN stack, which includes ReactJS, NodeJS, MongoDB, and ExpressJS.
 
 
 
 
 ## Introduction
 
-Online Driving Licencing is designed to revolutionize the process of obtaining a driving license, offering a user-friendly and interactive learning experience. Our platform aims to make driver education more accessible, engaging, and efficient.
+Online Driving Licensing is designed to revolutionize the process of obtaining a driving license, offering a user-friendly and interactive learning experience. Our platform aims to make driver education more accessible, engaging, and efficient.
 
 In the following sections, we will cover the technical details of the platform, including the system architecture, API design, installation, usage instructions, and potential future enhancements.
 
@@ -81,7 +81,7 @@ For User:
 
 ![Main Page](image/driving_dashbord_2.png)
 
-- **Exam:** Online exam that user will give to get a licence.
+- **Exam:** Online exam that user will give to get a license.
 ![Main Page](image/driving_dashboard_exam_1.png)
 - **Print:** user can download the licence.
 
