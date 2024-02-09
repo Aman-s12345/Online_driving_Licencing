@@ -2,6 +2,7 @@
 const express = require("express");
 const app = express();
 const userRoutes = require("./routes/user");
+const profileRoutes = require("./routes/profile");
 const database = require("./config/database");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
@@ -39,6 +40,7 @@ cloudinaryConnect.cloudinaryConnect();
 
 // Setting up routes
 app.use("/api/v1/auth", userRoutes);
+app.use("/api/v1/profile",profileRoutes);
 
 // Testing the server
 app.get("/", (req, res) => {

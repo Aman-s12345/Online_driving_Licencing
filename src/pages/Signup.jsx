@@ -1,12 +1,12 @@
-import signupImg from "../assets/Images/signup.webp"
+import signupImg from "../assets/loginimage.jpg"
 import Template from "../components/core/Auth/Template"
 
 function Signup() {
   return (
     <Template
       title="Join With us!"
-      description1="Run live stream using RSTP."
-      description2="Add Logo and Text."
+      description1="Lets Drive to the very end."
+      description2="Get you Driving Licencing ."
       image={signupImg}
       formType="signup"
     />

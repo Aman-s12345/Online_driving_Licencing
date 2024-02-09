@@ -1,12 +1,12 @@
-import loginImg from "../assets/Images/login.webp"
+import loginImg from "../assets/login_women.jpg"
 import Template from "../components/core/Auth/Template"
 
 function Login() {
   return (
     <Template
-      title="Welcome Back"
-      description1="Run live stream using RSTP.."
-      description2="Add Logo and Text."
+    title="Join With us!"
+    description1="Lets Drive to the very end."
+    description2="Get you Driving Licencing ."
       image={loginImg}
       formType="login"
     />

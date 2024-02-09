@@ -26,19 +26,21 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    score:{
+      type: Number,
+    },
 
     token: {
         type: String,
     },
-  
-    text_field: {
-      type: String,
-    },
-   
     image: {
       type: String,
     },
-  
+    additionalDetails: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "Profile",
+    },
 
   },
   { timestamps: true }

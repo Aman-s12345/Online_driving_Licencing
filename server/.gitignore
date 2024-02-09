@@ -1,12 +1,12 @@
 
-/node_modules
-
+node_modules/
 .env
+*.env
 # testing
 /coverage
 
 # production
-/build
+build/
 
 # misc
 .DS_Store

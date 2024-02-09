@@ -1,18 +1,14 @@
 import { toast } from "react-hot-toast"
-import { setLoading , setUser, setToken } from "../../slices/authSlice"
+import { setLoading , setToken } from "../../slices/authSlice"
+import { setUser } from "../../slices/profileSlice"
 import { apiConnector } from "../apiConnector"
 import { endpoints } from "../apis"
-import { removeFromImage , removeFromText} from "../../slices/cartSlice"
-import { addToImage ,addToText   } from "../../slices/cartSlice"
+
 
 const {
   SENDOTP_API,
   SIGNUP_API,
   LOGIN_API,
-  CREATE_IMAGE,
-  DELETE_IMAGE,
-  CREATE_TEXT,
-  DELETE_TEXT,
 } = endpoints
 
 export function sendOtp(email, navigate) {
@@ -100,8 +96,12 @@ export function login(email, password, navigate) {
 
       toast.success("Login Successful")
       dispatch(setToken(response.data.token))
-      dispatch(setUser(response.data.user));
-      navigate("/dashboard")
+      const userImage = response.data?.user?.image
+        ? response.data.user.image
+        : `https://api.dicebear.com/5.x/initials/svg?seed=${response.data.user.firstName} ${response.data.user.lastName}`
+      dispatch(setUser({ ...response.data.user, image: userImage }))
+      localStorage.setItem("token", JSON.stringify(response.data.token))
+      navigate("/dashboard/my-profile")
     } catch (error) {
       console.log("LOGIN API ERROR............", error)
       toast.error("Login Failed")
@@ -112,131 +112,10 @@ export function login(email, password, navigate) {
 }
 
 
-export function createimage(email, thumbnailFile) {
-  return async (dispatch) => {
-    const toastId = toast.loading("Loading...");
-    dispatch(setLoading(true));
-
-    try {
-      const formData = new FormData();
-      formData.append('email', email);
-      formData.append('thumbnailImage', thumbnailFile);
-
-      const response = await apiConnector("POST", CREATE_IMAGE, formData, {
-        'Content-Type': 'multipart/form-data', // Important for handling form data
-      });
-
-      console.log("Image uploaded response: ", response);
-
-      if (!response.data.success) {
-        console.log("Image upload API error: ", response);
-        throw new Error(response.data.message);
-      }
-      dispatch(addToImage(response.data.image));
-
-      toast.success("Image upload successful");
-    } catch (error) {
-      console.log("Image upload API error: ", error);
-      toast.error("Image upload failed");
-    }
-
-    dispatch(setLoading(false));
-    toast.dismiss(toastId);
-  };
-}
-
-export function deleteimage(email) {
-  return async (dispatch) => {
-    const toastId = toast.loading("Loading...");
-    dispatch(setLoading(true));
-
-    try {
-      const response = await apiConnector("POST", DELETE_IMAGE , {
-        email
-      });
-
-      console.log("Image deleted response: ", response);
-
-      if (!response.data.success) {
-        throw new Error(response.data.message);
-      }
-      dispatch(removeFromImage());
-
-      toast.success("Logo deleted successful");
-    } catch (error) {
-      console.log("Logo delete krne me  error: ", error);
-      toast.error("Can't delete the logo from Db");
-    }
-
-    dispatch(setLoading(false));
-    toast.dismiss(toastId);
-  };
-}
-
-export function createtext(email , text) {
-  return async (dispatch) => {
-    const toastId = toast.loading("Loading...");
-    dispatch(setLoading(true));
-
-    try {
-      const response = await apiConnector("POST", CREATE_TEXT , {
-        email,
-        text
-      });
-
-      console.log("text deleted response: ", response);
-
-      if (!response.data.success) {
-        throw new Error(response.data.message);
-      }
-      dispatch(addToText(response.data.text));
-
-      toast.success("Description added successful");
-    } catch (error) {
-      console.log("Text upload krne me  error: ", error);
-      toast.error("Cannt upload text to db");
-    }
-
-    dispatch(setLoading(false));
-    toast.dismiss(toastId);
-  };
-}
-
-export function deletetext(email) {
-  return async (dispatch) => {
-    const toastId = toast.loading("Loading...");
-    dispatch(setLoading(true));
-
-    try {
-      const response = await apiConnector("POST", DELETE_TEXT , {
-        email
-      });
-
-      console.log("Text deleted response: ", response);
-
-      if (!response.data.success) {
-        throw new Error(response.data.message);
-      }
-      dispatch(removeFromText());
-
-      toast.success("Description  deleted successfully");
-    } catch (error) {
-      console.log("Text delete krne me  error: ", error);
-      toast.error("Can't delete text from Db");
-    }
-
-    dispatch(setLoading(false));
-    toast.dismiss(toastId);
-  };
-}
-
 export function logout(navigate) {
   return (dispatch) => {
-
     dispatch(setToken(null))
- 
     localStorage.removeItem("token")
-    localStorage.removeItem("user")
     toast.success("Logged Out")
     navigate("/")
   }
