@@ -25,7 +25,8 @@ Password : 1212
 
      
 **Set up env file as well**
-     ```
+
+     ```bash
      in Root directory create a .env file and add REACT_APP_BASE_URL = http://localhost:4000/api/v1 
      in ./server make a .env file and you have to signup to cloudinary , make a app password of you email
      MAIL_HOST = smtp.gmail.com
